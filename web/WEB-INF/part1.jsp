@@ -13,12 +13,13 @@
     </head>
     <body>
         <h1>CPRG-352 Practice Exam 1</h1>
-        
+        <form method="POST"/>
         Enter a motivational phrase:<input type="text" name="phrase"/>
         <br/>
         <input type="submit" value="Set phrase"/>
+        <form/>
         <br/>
-        <br/>
-        <a href="">Part 2</a>
+        <h2>${returnedPhrase}</h2>
+        <a href="Part2">Part 2</a>
     </body>
 </html>

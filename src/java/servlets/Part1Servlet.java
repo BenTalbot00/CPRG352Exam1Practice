@@ -1,3 +1,5 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -17,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Part1Servlet extends HttpServlet {
 
+    String phrase;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,7 +44,7 @@ public class Part1Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/part1.jsp").forward(request, response);
+       getServletContext().getRequestDispatcher("/WEB-INF/part1.jsp").forward(request, response);
     }
 
     /**
@@ -54,7 +58,10 @@ public class Part1Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
+        phrase  = (String) request.getParameter("phrase");
+        session.setAttribute("returnedPhrase", phrase);
+        response.sendRedirect("/CPRG352Exam1Practice/Part1");
     }
 
     /**

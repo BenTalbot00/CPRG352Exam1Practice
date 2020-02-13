@@ -5,11 +5,19 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>Part1Servlet</servlet-name>
-        <servlet-class>Part1Servlet</servlet-class>
+        <servlet-class>servlets.Part1Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Part2Servlet</servlet-name>
+        <servlet-class>servlets.Part2Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Part1Servlet</servlet-name>
         <url-pattern>/Part1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Part2Servlet</servlet-name>
+        <url-pattern>/Part2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
